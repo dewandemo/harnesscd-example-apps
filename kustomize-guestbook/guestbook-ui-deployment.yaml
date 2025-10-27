@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: guestbook-ui
-  namespace: guestbook
+  namespace: staging-ns
 spec:
   replicas: 3
   revisionHistoryLimit: 3
@@ -15,7 +15,7 @@ spec:
         app: guestbook-ui
     spec:
       containers:
-      - image: dewandemo/guestbook-dev:v2
+      - image: dewandemo/guestbook-dev:v1
         name: guestbook-ui
         ports:
         - containerPort: 80
